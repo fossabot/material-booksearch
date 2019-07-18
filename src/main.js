@@ -1,14 +1,16 @@
 import Vue from 'vue';
 import ReactiveSearch from '@appbaseio/reactivesearch-vue';
-import VueMaterial from 'vue-material';
+// import VueMaterial from 'vue-material';
 import { Plugin } from 'vue-fragment';
 
-import 'vue-material/dist/vue-material.min.css';
-import 'vue-material/dist/theme/default.css';
+// import 'vue-material/dist/vue-material.min.css';
+// import 'vue-material/dist/theme/default.css';
+
+import '@/plugins/vuetify';
 
 import App from '@/App.vue';
 import router from '@/router';
-import '@/plugins/vuetify';
+
 import 'roboto-fontface/css/roboto/roboto-fontface.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 import '@/stylus/main.styl';
@@ -17,7 +19,7 @@ Vue.config.productionTip = false;
 
 
 Vue.use(ReactiveSearch);
-Vue.use(VueMaterial);
+// Vue.use(VueMaterial);
 Vue.use(Plugin);
 
 
