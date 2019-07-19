@@ -9,6 +9,7 @@ export const routes = [
     path: '/',
     name: 'home',
     component: Home,
+    meta: { topBar: false },
   },
   {
     path: '/about',

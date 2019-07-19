@@ -1,21 +1,26 @@
 <template>
-  <v-app>
-    <v-toolbar app color="primary" :class="classes.appbar">
-      <v-toolbar-title class="headline text-uppercase">
-        <span :class="classes.logoStyles">BS</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-    </v-toolbar>
-
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+  <reactive-base
+      :app="esApp.app"
+      :credentials="esApp.credentials"
+      :type="esApp.type"
+    >
+      <v-app>
+        <v-toolbar app color="primary" :class="classes.appbar">
+          <v-toolbar-title class="headline text-uppercase elevation-4">
+            <span class="elevation-4" :class="classes.logoStyles">BS</span>
+          </v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-toolbar>
+        <v-content>
+          <router-view />
+        </v-content>
+      </v-app>
+  </reactive-base>
 </template>
 
 <script>
 import { css } from 'emotion';
-import HelloWorld from './components/HelloWorld.vue';
+import { esApp } from '@/constants';
 
 const logoStyles = css`
   box-shadow: 2px 2px #1890ff, 4px 4px #096dd9;
@@ -33,25 +38,28 @@ const appbarClass = theme => css`
   height: 64px;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 0px;
   box-shadow: none;
   background: #174ff4;
 `;
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
+  computed: {
+    classes() {
+      const { theme } = this.$vuetify;
+      const { topBar } = this.$route.meta;
+
+      const appbaseClasses = topBar !== false ? appbarClass(theme) : ['elevation-0', appbarClass(theme)].join(' ');
+      return {
+        logoStyles,
+        appbar: appbaseClasses,
+      };
+    },
   },
   data() {
-    const { theme } = this.$vuetify;
     return {
-      css,
-      classes: {
-        logoStyles,
-        appbar: appbarClass(theme),
-      },
-      message: 'saomthiung',
+      esApp,
     };
   },
 };
