@@ -1,41 +1,66 @@
 <template>
-  <reactive-base
+  <v-app>
+    <reactive-base
       :app="esApp.app"
       :credentials="esApp.credentials"
       :type="esApp.type"
     >
-    <Layout>
-    </Layout>
+        <v-toolbar app color="primary" :class="classes.appbar">
+          <v-toolbar-title class="headline text-uppercase elevation-4">
+            <span class="elevation-4" :class="classes.logoStyles">BS</span>
+          </v-toolbar-title>
+          <v-spacer></v-spacer>
+        </v-toolbar>
+        <v-content>
+          <router-view />
+        </v-content>
   </reactive-base>
+  </v-app>
 </template>
 
-<style lang="scss" scoped>
-  .md-app {
-    min-height: 100vh;
-    border: 1px solid rgba(#000, .12);
-  }
-
-   // Demo purposes only
-  .md-drawer {
-    width: 230px;
-    max-width: calc(100vw - 125px);
-  }
-</style>
-
 <script>
-// import { css } from 'emotion';
+import { css } from 'emotion';
 import { esApp } from '@/constants';
-import Layout from '@/components/Layout.vue';
+
+const logoStyles = css`
+  box-shadow: 2px 2px #1890ff, 4px 4px #096dd9;
+  padding: 10px;
+  font-weight: 600;
+  background: white;
+  color: #1890ff;
+  border-radius: 2px;
+  border: 1px solid #bae7ff;
+`;
+
+const appbarClass = theme => css`
+  z-index: ${theme.zIndex.drawer + 1};
+  flex-direction: row;
+  height: 64px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  box-shadow: none;
+  background: #174ff4;
+`;
 
 export default {
-  name: 'app',
+  name: 'App',
+  computed: {
+    classes() {
+      const { theme } = this.$vuetify;
+      const { topBar } = this.$route.meta;
+
+      const appbaseClasses = topBar !== false ? appbarClass(theme) : ['elevation-0', appbarClass(theme)].join(' ');
+      return {
+        logoStyles,
+        appbar: appbaseClasses,
+      };
+    },
+  },
   data() {
     return {
       esApp,
     };
-  },
-  components: {
-    Layout,
   },
 };
 </script>
