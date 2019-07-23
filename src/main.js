@@ -1,5 +1,8 @@
 import Vue from 'vue';
 
+
+import VueMaterial from 'vue-material';
+
 import ReactiveSearch from '@appbaseio/reactivesearch-vue';
 import { Plugin } from 'vue-fragment';
 
@@ -9,6 +12,7 @@ import router from '@/router';
 Vue.config.productionTip = false;
 
 
+Vue.use(VueMaterial);
 Vue.use(ReactiveSearch);
 Vue.use(Plugin);
 
