@@ -1,13 +1,15 @@
 <template>
-  <HelloWorld />
+  <fragment>
+    <TopSection />
+  </fragment>
 </template>
 
 <script>
-import HelloWorld from '../components/HelloWorld.vue';
+import TopSection from '../components/TopSection.vue';
 
 export default {
   components: {
-    HelloWorld,
+    TopSection,
   },
 };
 </script>

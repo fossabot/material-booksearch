@@ -3,6 +3,7 @@
     <h1>The BookSearch App</h1>
     <h2>Search Books & more.</h2>
     <DataSearch
+      :className="inputContainerStyles"
       componentId="homesearch"
       :dataField="[
         'authors',
@@ -18,6 +19,7 @@
       placeholder="Search for books & author"
       autosuggest
       :fieldWeights="[2, 1, 1, 1, 2, 1, 1, 1]"
+      :onValueSelected="pushBook"
     />
   </div>
 </template>
@@ -88,11 +90,18 @@ const resultStyles = css`
 
 
 export default {
+  name: 'TopSection',
   data: () => ({
     headerStyles,
     inputContainerStyles,
     resultStyles,
   }),
+  methods: {
+    pushBook (value) {
+      console.log('called', value);
+      this.$router.push(`/search/?Search="${value}"`);
+    }
+  }
 };
 </script>
 
