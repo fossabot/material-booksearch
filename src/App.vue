@@ -18,6 +18,12 @@
   </v-app>
 </template>
 
+<style>
+ .hidden {
+   display: none !important;
+ }
+</style>
+
 <script>
 import { css } from 'emotion';
 import { esApp } from '@/constants';
