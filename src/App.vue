@@ -5,15 +5,15 @@
       :credentials="esApp.credentials"
       :type="esApp.type"
     >
-        <v-toolbar app color="primary" :class="classes.appbar">
-          <v-toolbar-title class="headline text-uppercase elevation-4">
-            <span class="elevation-4" :class="classes.logoStyles">BS</span>
-          </v-toolbar-title>
-          <v-spacer></v-spacer>
-        </v-toolbar>
-        <v-content>
-          <router-view />
-        </v-content>
+      <v-toolbar app color="primary" :class="classes.appbar">
+        <v-toolbar-title class="headline text-uppercase elevation-4">
+          <span class="elevation-4" :class="classes.logoStyles">BS</span>
+        </v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-toolbar>
+      <v-content>
+        <router-view />
+      </v-content>
   </reactive-base>
   </v-app>
 </template>
@@ -22,6 +22,11 @@
  .hidden {
    display: none !important;
  }
+
+ .faded {
+   color: #8c8c8c !important;
+ }
+
 </style>
 
 <script>
