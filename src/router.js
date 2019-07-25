@@ -12,9 +12,9 @@ export const routes = [
     meta: { topBar: false },
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+    path: '/book',
+    name: 'book',
+    component: () => import(/* webpackChunkName: "book" */ '@/views/Book.vue'),
   },
 ];
 
