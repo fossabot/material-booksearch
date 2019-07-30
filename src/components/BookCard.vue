@@ -6,7 +6,7 @@
     <v-img
       class="white--text"
       height="200px"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+      :src="item.image"
     >
       <v-chip
         color="default"
