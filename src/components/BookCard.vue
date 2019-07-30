@@ -24,10 +24,15 @@
     </v-card-title>
 
     <v-card-text class="faded mt-auto">
-      <span class="caption">{{ item.authors.join(', ') }}</span><br>
       <span
         class="caption"
-        :style="{...styles.year, ...styles.yearIcon}"
+        :style="styles.year"
+      >
+        {{ item.authors.join(', ') }}
+      </span><br>
+      <span
+        class="caption"
+        :style="styles.year"
       >
         <v-icon
           :style="styles.yearIcon"
@@ -65,6 +70,7 @@ const styles = () => ({
     marginRight: '5px',
   },
   year: {
+    fontSize: '0.975rem !important',
     marginTop: '10px',
   },
   ratingChip: {
