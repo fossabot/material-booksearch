@@ -98,7 +98,6 @@ export default {
   }),
   methods: {
     pushBook(value) {
-      console.log('called', value);
       this.$router.push(`/search/?Search="${value}"`);
     },
   },
