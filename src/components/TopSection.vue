@@ -97,11 +97,11 @@ export default {
     resultStyles,
   }),
   methods: {
-    pushBook (value) {
+    pushBook(value) {
       console.log('called', value);
       this.$router.push(`/search/?Search="${value}"`);
-    }
-  }
+    },
+  },
 };
 </script>
 
