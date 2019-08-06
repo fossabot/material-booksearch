@@ -7,7 +7,9 @@
     >
       <v-toolbar app color="primary" :class="classes.appbar">
         <v-toolbar-title class="headline text-uppercase elevation-4">
-          <span class="elevation-4" :class="classes.logoStyles">BS</span>
+          <router-link to="/">
+            <span class="elevation-4" :class="classes.logoStyles">BS</span>
+          </router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
       </v-toolbar>
