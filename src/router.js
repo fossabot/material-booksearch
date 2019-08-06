@@ -12,7 +12,7 @@ export const routes = [
     meta: { topBar: false },
   },
   {
-    path: '/book',
+    path: '/book/:bookId',
     name: 'book',
     component: () => import(/* webpackChunkName: "book" */ '@/views/Book.vue'),
   },
