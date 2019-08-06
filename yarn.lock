@@ -1570,7 +1570,7 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-appbase-js@^4.0.2-beta.06:
+appbase-js@^4.0.2-beta.06, appbase-js@^4.0.2-beta.7:
   version "4.0.2-beta.7"
   resolved "https://registry.yarnpkg.com/appbase-js/-/appbase-js-4.0.2-beta.7.tgz#428df6f5a33f8a67904bfc74d7cea5fe9ebdd594"
   integrity sha512-iclgiBeb9pq8/cpi9dvFgD4N2+jnpNW5xNwqgrN2vC0zihEx+C/K83CNYjocLr5+2zNBRPYhhGge5VixKxtg1g==
