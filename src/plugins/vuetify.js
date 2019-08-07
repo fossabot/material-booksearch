@@ -12,7 +12,11 @@ Vue.use(Vuetify, {
     success: '#4CAF50',
     warning: '#FB8C00',
     zIndex: {
-      drawer: 2,
+      drawer: 3,
+    },
+    drawer: {
+      height: 'calc(100vh - 64px)',
+      width: '300px',
     },
   },
   iconfont: 'md',
