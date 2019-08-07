@@ -15,7 +15,7 @@ Vue.use(Vuetify, {
       drawer: 3,
     },
     drawer: {
-      height: 'calc(100vh - 64px)',
+      height: '100%',
       width: '300px',
     },
   },
