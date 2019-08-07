@@ -16,6 +16,11 @@ export const routes = [
     name: 'book',
     component: () => import(/* webpackChunkName: "book" */ '@/views/Book.vue'),
   },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import(/* webpackChunkName: "search" */ '@/views/Search.vue'),
+  },
 ];
 
 const router = new Router({ mode: 'history', routes });
