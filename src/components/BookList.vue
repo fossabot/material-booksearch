@@ -32,6 +32,12 @@ const listStyles = css`
 
 export default {
   props: {
+    gridProps: {
+      type: Object,
+      default: () => ({
+        sm6: true, md3: true, xs12: true,
+      }),
+    },
     title: {
       type: String,
     },
