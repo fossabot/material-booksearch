@@ -1,6 +1,6 @@
 <template>
 <fragment>
-  <h2 :class="classes.heading" class="mb-0">{{  title }}</h2>
+  <h2 :class="classes.heading" v-if="title" class="mb-0">{{  title }}</h2>
   <ReactiveList
     v-bind="props"
   >
@@ -34,7 +34,6 @@ export default {
   props: {
     title: {
       type: String,
-      required: true,
     },
     reactiveListProps: {
       required: false,
