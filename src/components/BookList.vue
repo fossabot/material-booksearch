@@ -6,8 +6,8 @@
   >
     <div slot="renderAllData" slot-scope="{ results }">
       <v-container grid-list-xl text-center fluid class="pa-0 mt-2">
-        <v-layout row>
-          <v-flex sm6 md3 xs12 :key="item.id" v-for="item in results">
+        <v-layout row wrap>
+          <v-flex v-bind="gridProps" :key="item.id" v-for="item in results">
             <BookCard :item="item" />
           </v-flex>
         </v-layout>
