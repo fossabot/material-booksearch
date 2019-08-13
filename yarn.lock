@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@appbaseio/reactivecore@^8.2.8":
+"@appbaseio/reactivecore@^8.2.9":
   version "8.2.9"
   resolved "https://registry.yarnpkg.com/@appbaseio/reactivecore/-/reactivecore-8.2.9.tgz#53edddf6cfe3f654a2c6160be6a6db150e80fab4"
   integrity sha512-6tKjoKj6Xj3PcG8vrEqoA5tU0v0h9XyhN41VqaxgSERkmvSU+EIxkOYIcXhH5E6ersA3DeWvYKZtsU7E7xVgcQ==
@@ -11,12 +11,13 @@
     redux "^4.0.0"
     redux-thunk "^2.3.0"
 
-"@appbaseio/reactivesearch-vue@^1.0.0-beta.17":
-  version "1.0.0-beta.17"
-  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch-vue/-/reactivesearch-vue-1.0.0-beta.17.tgz#52a0ca904fc6b6939b9065d7f48ddf6a78e321b8"
-  integrity sha512-kTqjP8UcJwjXSu8GVBfB4d+2J9OKQwq+XkWCkoxIsf0qPh/RpnQI54Be9/j6Uj4ThdB1A8QDvnIgyAVx6JAMhg==
+"@appbaseio/reactivesearch-vue@^1.0.0-beta.18":
+  version "1.0.0-beta.18"
+  resolved "https://registry.yarnpkg.com/@appbaseio/reactivesearch-vue/-/reactivesearch-vue-1.0.0-beta.18.tgz#4c37437e682e5178e7bc3822d3cf39a0e048fe93"
+  integrity sha512-2rQIVpWd8cj9ELLV410XAYYP5czssjxPi5++FLaxncMDnDlAY83W/7rs9vOAfAaqoOEGvO1U30V1RA7m3yeP6A==
   dependencies:
-    "@appbaseio/reactivecore" "^8.2.8"
+    "@appbaseio/reactivecore" "^8.2.9"
+    "@appbaseio/vue-emotion" "0.4.4"
     appbase-js "^4.0.2-beta.06"
     babel-helper-vue-jsx-merge-props "^2.0.3"
     compute-scroll-into-view "^1.0.11"
@@ -25,11 +26,18 @@
     redux "^4.0.0"
     url-search-params-polyfill "^7.0.0"
     vue "^2.5.17"
-    vue-emotion "0.4.2"
     vue-highlight-words "^1.2.0"
     vue-no-ssr "^1.1.0"
     vue-slider-component "^2.8.2"
     vue-types "^1.3.3"
+
+"@appbaseio/vue-emotion@0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@appbaseio/vue-emotion/-/vue-emotion-0.4.4.tgz#a2187691a5dce090a8571250c1a7911d2ceee58a"
+  integrity sha512-ljbCeLozV+5O9lOaJc67gvhdz3RTLYwZj6aRpYRvXgcIIAtSOTT1TBdvCoORoCEYCfOseicv+TxKbOSGiopjBw==
+  dependencies:
+    emotion-utils "^9.1.0"
+    nano-assign "^1.0.0"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
@@ -10372,14 +10380,6 @@ vue-cli-plugin-vuetify@^0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-0.5.0.tgz#14c9a61884da58cf6aaf8ff3309044931907f184"
   integrity sha512-TigfiZUs7SN3Z6uxKilqJUtYxte8vp0F4QxabCli6hkKPqU97JzAZc3P7AL6omkRAd2DMI26fOrIGjuALTvXww==
-
-vue-emotion@0.4.2:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/vue-emotion/-/vue-emotion-0.4.2.tgz#df97359aadd49cc476eb23ba44b7d2962a669ced"
-  integrity sha1-35c1mq3UnMR26yO6RLfSlipmnO0=
-  dependencies:
-    emotion-utils "^9.1.0"
-    nano-assign "^1.0.0"
 
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
