@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import TopSection from '../components/TopSection.vue';
-import BookList from '../components/BookList.vue';
+import TopSection from '@/components/TopSection.vue';
+import BookList from '@/components/BookList.vue';
 
 export default {
   components: {
