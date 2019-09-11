@@ -20,6 +20,24 @@
         </div>
       </ReactiveComponent>
     </v-flex>
+    <v-flex sm11>
+      <ReactiveComponent
+        :defaultQuery="listDefaultQuery"
+        componentId="Series"
+      >
+        <div slot-scope="{ aggregations, setQuery, value }">
+          <ListComponent
+            key="Series"
+            title="Select Book Series"
+            dataField="original_series.keyword"
+            :aggregations="aggregations"
+            :setQuery="setQuery"
+            :selectedValue="value"
+          />
+        </div>
+      </ReactiveComponent>
+    </v-flex>
+    <v-divider />
     <v-flex sm12>
       <RangeSlider
         tooltipTrigger="hover"
@@ -37,8 +55,9 @@
 
 <script>
 import { css } from 'emotion';
-import { MultiList } from '@appbaseio/reactivesearch-vue';
+import { MultiList, SingleList } from '@appbaseio/reactivesearch-vue';
 import Select from '@/components/SelectAuthors.vue';
+import ListComponent from '@/components/ListComponent.vue';
 
 const sliderStyles = css`
   .rheostat-progress {
@@ -72,6 +91,14 @@ export default {
     };
   },
   computed: {
+    listDefaultQuery() {
+      return () => ({
+        ...SingleList.generateQueryOptions({
+          dataField: 'original_series.keyword',
+          size: 50,
+        }),
+      });
+    },
     props() {
       const { drawer } = this.$vuetify.theme;
       return {
@@ -85,6 +112,7 @@ export default {
   },
   components: {
     Select,
+    ListComponent,
   },
 };
 </script>
