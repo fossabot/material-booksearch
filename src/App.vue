@@ -29,6 +29,10 @@
    color: #8c8c8c !important;
  }
 
+ .cursor {
+   cursor: pointer;
+ }
+
 </style>
 
 <script>
