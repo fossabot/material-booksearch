@@ -29,7 +29,7 @@
    color: #8c8c8c !important;
  }
 
- .cursor {
+ .pointer, .cursor {
    cursor: pointer;
  }
 
