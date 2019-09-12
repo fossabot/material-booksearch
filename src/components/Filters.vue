@@ -40,6 +40,7 @@
     <v-divider />
     <v-flex sm12>
       <RangeSlider
+        :className="filterStyles"
         tooltipTrigger="hover"
         title="Publication Year"
         dataField="original_publication_year"
@@ -68,6 +69,18 @@ const sliderStyles = css`
   }
 `;
 
+const filterStyles = css`
+  margin: 20px 10px;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  background: white;
+  width: 280px;
+  @media (max-width: 576px) {
+    margin: 20px 0px;
+    padding: 10px;
+  }
+`;
+
 export default {
   props: {
     drawerProps: {
@@ -81,6 +94,7 @@ export default {
   data() {
     return {
       sliderStyles,
+      filterStyles,
       drawer: null,
       defaultQuery: () => ({
         ...MultiList.generateQueryOptions({
