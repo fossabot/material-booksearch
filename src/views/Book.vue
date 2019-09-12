@@ -4,12 +4,13 @@
       justify-space-between
       row
       fill-height
+      wrap
       class="container-fluid"
       v-if="book"
     >
       <v-flex
         md2
-        sm4
+        xs12
       >
         <img
           :style="{ width: '100%' }"
@@ -20,7 +21,7 @@
       <v-flex
         :style="{ paddingLeft: '20px' }"
         md10
-        sm8
+        xs12
       >
         <h2 class="font-weight-medium">{{ book.title }}</h2>
         <v-spacer></v-spacer>
