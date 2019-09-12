@@ -1,6 +1,6 @@
 <template>
   <v-card
-    class="mx-auto"
+    class="mx-auto pointer"
     height="100%"
   >
     <v-img
