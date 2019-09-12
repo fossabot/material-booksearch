@@ -2,6 +2,7 @@
   <v-card
     class="mx-auto pointer"
     height="100%"
+    @click="handelClick"
   >
     <v-img
       class="white--text"
@@ -91,6 +92,12 @@ export default {
     item: {
       type: Object,
       required: true,
+    },
+  },
+  methods: {
+    handelClick() {
+      // eslint-disable-next-line no-underscore-dangle
+      this.$router.push(`/book/${this.item._id}`);
     },
   },
   computed: {
