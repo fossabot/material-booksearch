@@ -12,6 +12,7 @@
           </router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
+        <Search v-if="topBar" topBar />
       </v-toolbar>
       <v-content>
         <router-view />
@@ -38,6 +39,7 @@
 <script>
 import { css } from 'emotion';
 import { esApp } from '@/constants';
+import Search from '@/components/Search.vue';
 
 const logoStyles = css`
   box-shadow: 2px 2px #1890ff, 4px 4px #096dd9;
@@ -63,6 +65,9 @@ const appbarClass = theme => css`
 export default {
   name: 'App',
   computed: {
+    topBar() {
+      return this.$route.meta.topBar !== false;
+    },
     classes() {
       const { theme } = this.$vuetify;
       const { topBar } = this.$route.meta;
@@ -78,6 +83,9 @@ export default {
     return {
       esApp,
     };
+  },
+  components: {
+    Search,
   },
 };
 </script>
