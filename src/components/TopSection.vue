@@ -2,30 +2,13 @@
  <div :class="headerStyles">
     <h1>The BookSearch App</h1>
     <h2>Search Books & more.</h2>
-    <DataSearch
-      :className="inputContainerStyles"
-      componentId="homesearch"
-      :dataField="[
-        'authors',
-        'original_title',
-        'original_title.autosuggest',
-        'original_title.raw',
-        'original_title.search',
-        'authors.autosuggest',
-        'authors.raw',
-        'authors.search',
-      ]"
-      :fuzziness="2"
-      placeholder="Search for books & author"
-      autosuggest
-      :fieldWeights="[2, 1, 1, 1, 2, 1, 1, 1]"
-      @valueSelected="pushBook"
-    />
+    <Search />
   </div>
 </template>
 
 <script>
 import { css } from 'emotion';
+import Search from '@/components/Search.vue';
 
 const headerStyles = css`
   display: flex;
@@ -56,52 +39,13 @@ const headerStyles = css`
   }
 `;
 
-const inputContainerStyles = css`
-  margin: 2em 0.5em;
-  width: 50%;
-  min-width: 200px;
-
-  @media (max-width: 768px) {
-    width: 80%;
-  }
-
-  input {
-    padding: 15px 20px 15px 40px;
-    font-size: 1rem;
-    height: auto;
-    border: 0;
-    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    transition: all ease 0.2s;
-  }
-
-  input:hover {
-    box-shadow: 0 10px 5px -6px rgba(0, 0, 0, 0.1);
-  }
-`;
-
-const resultStyles = css`
-  padding: 20px 40px;
-  overflow: hidden;
-  @media (max-width: 576px) {
-    padding: 20px;
-  }
-`;
-
-
 export default {
   name: 'TopSection',
   data: () => ({
     headerStyles,
-    inputContainerStyles,
-    resultStyles,
   }),
-  methods: {
-    pushBook(selection, type, obj) {
-      if (obj) {
-        this.$router.push(`/book/${obj.id}`);
-      }
-    },
+  components: {
+    Search,
   },
 };
 </script>
