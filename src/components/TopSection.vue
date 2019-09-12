@@ -19,7 +19,7 @@
       placeholder="Search for books & author"
       autosuggest
       :fieldWeights="[2, 1, 1, 1, 2, 1, 1, 1]"
-      :onValueSelected="pushBook"
+      @valueSelected="pushBook"
     />
   </div>
 </template>
@@ -97,8 +97,10 @@ export default {
     resultStyles,
   }),
   methods: {
-    pushBook(value) {
-      this.$router.push(`/search/?Search="${value}"`);
+    pushBook(selection, type, obj) {
+      if (obj) {
+        this.$router.push(`/book/${obj.id}`);
+      }
     },
   },
 };
