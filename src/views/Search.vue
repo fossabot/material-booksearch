@@ -20,11 +20,7 @@
             },
             size: 6,
             loader: null,
-              innerClass: {
-                pagination: 'hidden',
-                poweredBy: 'hidden',
-              },
-            }"
+          }"
           :cardProps="{
             style: {
               marginBottom: '24px',
