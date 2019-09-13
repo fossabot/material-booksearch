@@ -1,20 +1,20 @@
 <template>
-<fragment>
-  <h2 :class="classes.heading" v-if="title" class="mb-0">{{  title }}</h2>
-  <ReactiveList
-    v-bind="props"
-  >
-    <div slot="renderAllData" slot-scope="{ results }">
-      <v-container grid-list-xl text-center fluid class="pa-0 mt-2">
-        <v-layout row wrap>
-          <v-flex v-bind="gridProps" :key="item.id" v-for="item in results">
-            <BookCard :item="item" />
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
-  </ReactiveList>
-  </fragment>
+  <div :class="layoutStyle">
+    <h2 :class="classes.heading" v-if="title" class="mb-0">{{  title }}</h2>
+    <ReactiveList
+      v-bind="props"
+    >
+      <div slot="renderAllData" slot-scope="{ results }">
+        <v-container grid-list-xl text-center fluid class="pa-0 mt-2">
+          <v-layout row wrap>
+            <v-flex v-bind="gridProps" :key="item.id" v-for="item in results">
+              <BookCard :item="item" />
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </div>
+    </ReactiveList>
+  </div>
 </template>
 
 <script>
@@ -35,7 +35,7 @@ export default {
     gridProps: {
       type: Object,
       default: () => ({
-        sm6: true, md3: true, xs12: true,
+        sm3: true, md3: true, xs12: true,
       }),
     },
     title: {
@@ -65,7 +65,20 @@ export default {
         class: listStyles,
       }, get(this, 'reactiveListProps', {}));
     },
+    layoutStyle() {
+      const { drawer } = this.$vuetify.theme;
+
+      return css`
+        width: calc(100% - ${drawer.width});
+        margin-left: auto;
+
+        @media (max-width: 762px) {
+          width: 100%;
+        }
+      `;
+    },
   },
+
   components: {
     BookCard,
   },
