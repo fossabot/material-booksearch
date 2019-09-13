@@ -1,8 +1,8 @@
 <template>
   <DataSearch
-      :className="topBar ? inputContainerStylesTopBar : inputContainerStyles"
-      componentId="homesearch"
-      :dataField="[
+    :className="topBar ? inputContainerStylesTopBar : inputContainerStyles"
+    componentId="homesearch"
+    :dataField="[
         'authors',
         'original_title',
         'original_title.autosuggest',
@@ -12,12 +12,12 @@
         'authors.raw',
         'authors.search',
       ]"
-      :fuzziness="2"
-      placeholder="Search for books & author"
-      autosuggest
-      :fieldWeights="[2, 1, 1, 1, 2, 1, 1, 1]"
-      @valueSelected="pushBook"
-    />
+    :fuzziness="2"
+    placeholder="Search for books & author"
+    autosuggest
+    :fieldWeights="[2, 1, 1, 1, 2, 1, 1, 1]"
+    @valueSelected="pushBook"
+  />
 </template>
 
 <script>
