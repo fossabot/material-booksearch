@@ -120,7 +120,7 @@ export default {
         height: drawer.height,
         width: drawer.width,
         absolute: true,
-        'mobile-break-point': '960',
+        'mobile-break-point': '762',
         ...this.drawerProps,
       };
     },
