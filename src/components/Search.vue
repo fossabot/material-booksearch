@@ -50,9 +50,9 @@ const inputContainerStyles = css`
 const inputContainerStylesTopBar = css`
   margin: 0.5em 0.5em;
   width: 30%;
-  min-width: 150px;
+  min-width: 350px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     display: none;
   }
 
