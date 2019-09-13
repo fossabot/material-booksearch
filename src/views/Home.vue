@@ -3,6 +3,7 @@
     <TopSection />
     <v-container grid-list-xl>
       <BookList
+        width="100%"
         title="Trending Now"
         :reactiveListProps="{
             showResultStats: false,
