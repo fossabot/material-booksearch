@@ -32,6 +32,10 @@ const listStyles = css`
 
 export default {
   props: {
+    width: {
+      required: false,
+      type: String,
+    },
     gridProps: {
       type: Object,
       default: () => ({
@@ -69,7 +73,7 @@ export default {
       const { drawer } = this.$vuetify.theme;
 
       return css`
-        width: calc(100% - ${drawer.width});
+        width: ${this.width ? this.width : `calc(100% - ${drawer.width})`};
         margin-left: auto;
 
         @media (max-width: 762px) {
