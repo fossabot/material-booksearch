@@ -4,13 +4,13 @@
     wrap
   >
     <Filters />
-    <v-layout :style="layoutStyle">
+    <v-layout>
       <SelectedFilters
         clearAllLabel="Clear filters"
         :showClearAll="true"
       />
     </v-layout>
-    <v-layout :style="layoutStyle">
+    <v-layout>
       <BookList
         :gridProps="{ md4: true, sm6: true, xs12: true }"
         :reactiveListProps="{
@@ -37,13 +37,8 @@ import BookList from '@/components/BookList.vue';
 
 export default {
   data() {
-    const { drawer } = this.$vuetify.theme;
     return {
       drawer: null,
-      layoutStyle: {
-        width: `calc(100% - ${drawer.width})`,
-        marginLeft: 'auto',
-      },
       items: [
         { title: 'Home', icon: 'dashboard' },
         { title: 'About', icon: 'question_answer' },
