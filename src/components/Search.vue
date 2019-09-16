@@ -42,6 +42,10 @@ const inputContainerStyles = css`
     transition: all ease 0.2s;
   }
 
+  > div div {
+    top: calc(50% - 13px)
+  }
+
   input:hover {
     box-shadow: 0 10px 5px -6px rgba(0, 0, 0, 0.1);
   }
