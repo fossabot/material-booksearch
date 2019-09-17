@@ -1,7 +1,7 @@
 <template>
   <DataSearch
     :className="topBar ? inputContainerStylesTopBar : inputContainerStyles"
-    :componentId="topBar ? 'topsearch' : 'homesearch'"
+    :componentId="topBar ? 'topsearch' : 'Search'"
     :dataField="[
         'authors',
         'original_title',
@@ -15,13 +15,37 @@
     :fuzziness="2"
     placeholder="Search for books & author"
     autosuggest
+    URLParams
+    showIcon
     :fieldWeights="[2, 1, 1, 1, 2, 1, 1, 1]"
     @valueSelected="pushBook"
-  />
+  >
+    <template
+      slot="renderAllSuggestions"
+      slot-scope="{
+        currentValue,
+        isOpen,
+        getItemProps,
+        getItemEvents,
+        highlightedIndex,
+        suggestions,
+        parsedSuggestions,
+      }"
+    >
+      <suggestions
+        v-if="suggestions && suggestions.length > 0 && isOpen"
+        :currentValue="currentValue"
+        :suggestions="suggestions"
+        :highlightedIndex="highlightedIndex"
+        :parsedSuggestions="parsedSuggestions"
+      />
+    </template>
+  </DataSearch>
 </template>
 
 <script>
 import { css } from 'emotion';
+import Suggestions from '@/components/Suggestions.vue';
 
 const inputContainerStyles = css`
   margin: 2em 0.5em;
@@ -40,10 +64,6 @@ const inputContainerStyles = css`
     box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     transition: all ease 0.2s;
-  }
-
-  > div div {
-    top: calc(50% - 13px)
   }
 
   input:hover {
@@ -94,6 +114,8 @@ export default {
       }
     },
   },
-
+  components: {
+    Suggestions,
+  },
 };
 </script>
