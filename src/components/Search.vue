@@ -1,7 +1,7 @@
 <template>
   <DataSearch
     :className="topBar ? inputContainerStylesTopBar : inputContainerStyles"
-    :componentId="topBar ? 'topsearch' : 'Search'"
+    :componentId="topBar ? 'Search' : 'homesearch'"
     :dataField="[
         'authors',
         'original_title',
@@ -77,7 +77,8 @@ const inputContainerStylesTopBar = css`
   min-width: 350px;
 
   @media (max-width: 600px) {
-    display: none;
+    width: 80% ;
+    min-width: 100px;
   }
 
   input {
