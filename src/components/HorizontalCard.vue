@@ -1,5 +1,5 @@
 <template>
-   <div class="dhidden-xs-only card">
+   <div class="card">
     <div class="card-content">
       <v-card-title class="align-end mb-0 pb-1 title">
         <div class="text-truncate">
@@ -42,7 +42,7 @@
 
     <v-img
       class="white--text"
-      height="200px"
+      height="100%"
       width="30%"
       :src="item.image"
     >
@@ -80,15 +80,17 @@ export default {
     display: flex;
     justify-content: space-between;
     font-family: Roboto;
+    align-items: center;
 
     .v-image {
-      width: 40%;
-      max-width: 150px;
+      width: 30%;
+      height: 100%;
+      max-width: 100px;
     }
 
     .card-content {
-      width: 60%;
-      min-width: calc(100% - 150px);
+      width: 70%;
+      min-width: calc(100% - 100px);
     }
 
     .calender-text {
