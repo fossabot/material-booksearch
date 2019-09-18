@@ -29,6 +29,24 @@
           }"
       />
     </v-layout>
+
+    <v-footer
+      app
+      dark
+      height="auto"
+      color="primary"
+    >
+        <v-btn
+           ripple
+          large
+          block
+          color="info"
+          class="result-btn"
+          :style="{ margin: '0 auto' }"
+        >
+          Show Filters
+        </v-btn>
+    </v-footer>
   </v-container>
 </template>
 
@@ -52,3 +70,15 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+  .result-btn {
+    border-radius: 0 0 4px 4px !important;
+    border: 0 !important;
+    color: white !important;
+    position: sticky !important;
+    bottom: 0 !important;
+    width: 100%;
+    margin-bottom: 0;
+  }
+</style>
