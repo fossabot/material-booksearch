@@ -91,10 +91,6 @@ export default {
     a {
       color: #8c8c8c;
     }
-
-    @media (max-width: 425px) {
-      max-height: 180px;
-    }
   }
 
   .result-btn {
