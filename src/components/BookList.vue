@@ -72,6 +72,7 @@ export default {
         size: 4,
         scrollOnChange: false,
         class: listStyles,
+        loader: 'Loading...',
       }, get(this, 'reactiveListProps', {}));
     },
     layoutStyle() {
