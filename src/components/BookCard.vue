@@ -4,57 +4,32 @@
     height="100%"
     @click="handelClick"
   >
-    <v-img
-      class="white--text"
-      height="200px"
-      :src="item.image"
-    >
-      <v-chip
-        color="default"
-        label
-        class="rating-chip"
-      >
-        <v-icon
-          left
-          class="star-icon"
-        >
-          grade
-        </v-icon>
-        {{ item.average_rating }}
-      </v-chip>
-    </v-img>
-    <v-card-title class="align-end mb-0 pb-1 title">
-      <div class="text-truncate">
-        {{ item.title }}
-      </div>
-    </v-card-title>
-
-    <v-card-text class="faded mt-auto">
-      <span
-        class="caption year"
-      >
-        {{ item.authors.join(', ') }}
-      </span><br>
-      <span
-        class="caption year"
-      >
-        <v-icon class="year-icon">
-          calendar_today
-        </v-icon>
-        {{ item.original_publication_year }}
-      </span>
-    </v-card-text>
-
+  <vertical-card
+    :class="responsiveSwitch && 'hidden-xs-only'"
+    :item="item"
+  />
+  <horizontal-card
+    v-if="responsiveSwitch"
+    :class="responsiveSwitch && 'hidden-sm-and-up'"
+    :item="item"
+   />
   </v-card>
 </template>
 
 <script>
+import VerticalCard from '@/components/VerticalCard.vue';
+import HorizontalCard from '@/components/HorizontalCard.vue';
 
 export default {
   props: {
     item: {
       type: Object,
       required: true,
+    },
+    responsiveSwitch: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   methods: {
@@ -63,32 +38,13 @@ export default {
       this.$router.push(`/book/${this.item._id}`);
     },
   },
-  computed: {
+  components: {
+    VerticalCard,
+    HorizontalCard,
   },
 };
 </script>
 
-<style scoped>
-  .year-icon {
-    font-size: 14px;
-    margin-right: 5px;
-  }
+<style lang="scss" scoped>
 
-  .year {
-    font-size: 0.975rem !important;
-    margin-top: 10px;
-  }
-
-  .rating-chip {
-    background: #f5f5f5;
-    border-radius: 2px;
-    box-shadow: none;
-    border-color: #e8e8e8;
-    color: #8c8c8c;
-  }
-
-  .star-icon {
-    color: #faad14;
-    font-size: 15px;
-  }
 </style>

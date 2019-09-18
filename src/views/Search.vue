@@ -12,6 +12,7 @@
     </v-layout>
     <v-layout>
       <BookList
+        responsiveSwitch
         :gridProps="{ md4: true, sm6: true, xs12: true }"
         :reactiveListProps="{
             showResultStats: false,
