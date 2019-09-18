@@ -20,6 +20,7 @@
           app
           dark
           height="auto"
+          color="#2f1b5e"
         >
           <v-card-actions color="info" class="white--text">
             This app is part of the ReactiveSearch Marketplace. You can check more apps here.
@@ -27,9 +28,9 @@
           <v-spacer></v-spacer>
           <v-btn
             ripple
-            color="info"
-            class="result-btn ml-auto"
-            :to="'/search/?Search='+currentValue"
+            color="#FFFFFF"
+            class="result-btn ml-auto black--text"
+            to="https://gumroad.com/l/DHtTHl"
           >
             Buy Now
           </v-btn>
