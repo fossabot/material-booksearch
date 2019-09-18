@@ -12,11 +12,16 @@
       <v-chip
         color="default"
         label
-        :style="styles.ratingChip"
+        class="rating-chip"
       >
-      <v-icon left :style="styles.starIcon">grade</v-icon>
-      {{ item.average_rating }}
-    </v-chip>
+        <v-icon
+          left
+          class="star-icon"
+        >
+          grade
+        </v-icon>
+        {{ item.average_rating }}
+      </v-chip>
     </v-img>
     <v-card-title class="align-end mb-0 pb-1 title">
       <div class="text-truncate">
@@ -26,18 +31,14 @@
 
     <v-card-text class="faded mt-auto">
       <span
-        class="caption"
-        :style="styles.year"
+        class="caption year"
       >
         {{ item.authors.join(', ') }}
       </span><br>
       <span
-        class="caption"
-        :style="styles.year"
+        class="caption year"
       >
-        <v-icon
-          :style="styles.yearIcon"
-        >
+        <v-icon class="year-icon">
           calendar_today
         </v-icon>
         {{ item.original_publication_year }}
@@ -48,44 +49,6 @@
 </template>
 
 <script>
-
-const styles = () => ({
-  card: {
-    display: 'flex',
-    position: 'relative',
-    borderRadius: '2px',
-  },
-  details: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '80%',
-  },
-  content: {
-    flex: '1 0 auto',
-  },
-  cover: {
-    width: '20%',
-  },
-  yearIcon: {
-    fontSize: '14px',
-    marginRight: '5px',
-  },
-  year: {
-    fontSize: '0.975rem !important',
-    marginTop: '10px',
-  },
-  ratingChip: {
-    background: '#f5f5f5',
-    borderRadius: '2px',
-    boxShadow: 'none',
-    borderColor: '#e8e8e8',
-    color: '#8c8c8c',
-  },
-  starIcon: {
-    color: '#faad14',
-    fontSize: '15px',
-  },
-});
 
 export default {
   props: {
@@ -101,7 +64,31 @@ export default {
     },
   },
   computed: {
-    styles,
   },
 };
 </script>
+
+<style scoped>
+  .year-icon {
+    font-size: 14px;
+    margin-right: 5px;
+  }
+
+  .year {
+    font-size: 0.975rem !important;
+    margin-top: 10px;
+  }
+
+  .rating-chip {
+    background: #f5f5f5;
+    border-radius: 2px;
+    box-shadow: none;
+    border-color: #e8e8e8;
+    color: #8c8c8c;
+  }
+
+  .star-icon {
+    color: #faad14;
+    font-size: 15px;
+  }
+</style>
