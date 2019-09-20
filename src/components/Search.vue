@@ -1,7 +1,7 @@
 <template>
   <DataSearch
     :className="topBar ? inputContainerStylesTopBar : inputContainerStyles"
-    :componentId="topBar ? 'Search' : 'homesearch'"
+    :componentId="topBar ? 'q' : 'homesearch'"
     :dataField="[
         'authors',
         'original_title',

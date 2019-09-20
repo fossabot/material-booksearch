@@ -39,7 +39,7 @@
       color="info"
       bottom
       class="result-btn"
-      :to="'/search/?Search='+currentValue"
+      :to="'/search/?q='+currentValue"
     >
       Show all results for {{currentValue}}
     </v-btn>
