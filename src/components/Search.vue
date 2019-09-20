@@ -86,7 +86,6 @@ const inputContainerStylesTopBar = css`
     font-size: 1rem;
     height: auto;
     border: 0;
-    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     transition: all ease 0.2s;
   }

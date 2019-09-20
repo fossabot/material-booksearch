@@ -16,6 +16,25 @@
       </v-toolbar>
       <v-content>
         <router-view />
+        <v-footer
+          app
+          dark
+          height="auto"
+          color="#2f1b5e"
+        >
+          <v-card-actions color="info" class="white--text">
+            This app is part of the ReactiveSearch Marketplace. You can check more apps here.
+          </v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            ripple
+            color="#FFFFFF"
+            class="result-btn ml-auto black--text"
+            to="https://gumroad.com/l/DHtTHl"
+          >
+            Buy Now
+          </v-btn>
+        </v-footer>
       </v-content>
   </reactive-base>
   </v-app>

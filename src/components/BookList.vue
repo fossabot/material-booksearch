@@ -8,7 +8,7 @@
         <v-container grid-list-xl text-center fluid class="pa-0 mt-2">
           <v-layout row wrap>
             <v-flex v-bind="gridProps" :key="item.id" v-for="item in results">
-              <BookCard :item="item" />
+              <BookCard :responsiveSwitch="responsiveSwitch" :item="item" />
             </v-flex>
           </v-layout>
         </v-container>
@@ -49,6 +49,11 @@ export default {
       required: false,
       default: {},
     },
+    responsiveSwitch: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data() {
     return {
@@ -67,6 +72,7 @@ export default {
         size: 4,
         scrollOnChange: false,
         class: listStyles,
+        loader: 'Loading...',
       }, get(this, 'reactiveListProps', {}));
     },
     layoutStyle() {
