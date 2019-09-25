@@ -6,10 +6,10 @@
         'authors',
         'original_title',
         'original_title.autosuggest',
-        'original_title.raw',
+        'original_title.keyword',
         'original_title.search',
         'authors.autosuggest',
-        'authors.raw',
+        'authors.keyword',
         'authors.search',
       ]"
     :fuzziness="2"

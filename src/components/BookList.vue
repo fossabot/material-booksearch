@@ -68,7 +68,7 @@ export default {
       return Object.assign({}, {
         pagination: true,
         componentId: 'result',
-        dataField: 'original_title.raw',
+        dataField: 'original_title.keyword',
         size: 4,
         scrollOnChange: false,
         class: listStyles,
